@@ -43,7 +43,7 @@ class ProfilerMiddleware(MiddlewareMixin):
     PROFILER_REQUEST_ATTR_NAME = '_django_cprofile_middleware_profiler'
 
     def can(self, request):
-        return settings.DEBUG and 'prof' in request.GET and \
+        return settings.PROF and 'prof' in request.GET and \
             request.user is not None and request.user.is_staff
 
     def process_view(self, request, callback, callback_args, callback_kwargs):
